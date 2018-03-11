@@ -8,19 +8,19 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.callApi()
-      .then(res => this.setState({ response: res.express }))
-      .catch(err => console.log(err));
+
   }
 
-  callApi = async () => {
-    const response = await fetch('/api/hello');
-    const body = await response.json();
+  goForward() {
+    console.log('goForward method');
 
-    if (response.status !== 200) throw Error(body.message);
-
-    return body;
-  };
+    fetch('http://localhost:5000/goforward', {
+      method: 'POST', // or 'PUT'
+    })
+      .then(res => res.json())
+      .catch(error => console.error('Error:', error))
+      .then(response => console.log('Success:', response));
+  }
 
   render() {
     return (
@@ -30,7 +30,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">{this.state.response}</p>
-        <button>Test</button>
+        <button onClick={this.goForward}>Test</button>
       </div>
     );
   }

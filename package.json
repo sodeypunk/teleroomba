@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/sodeypunk/teleroomba#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "serialport": "^6.1.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
