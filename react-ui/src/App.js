@@ -30,7 +30,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">{this.state.response}</p>
-        <button onClick={this.goForward}>Test</button>
+        <button type="button" className="btn btn-primary" onClick={this.goForward}>Test</button>
       </div>
     );
   }
